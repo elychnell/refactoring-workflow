@@ -6,7 +6,7 @@ let i = 0;
 
 export async function createHtml() {
 	const podCasts = await getPodcasts();
-	podCasts.programs.forEach((podcast) => {
+	podCasts.programs.forEach((podcast: any) => {
 		const innerArticle = createInnerArticle();
 
 		createImg();
@@ -22,7 +22,7 @@ export async function createHtml() {
 			const innerArticle = document.createElement('article');
 			innerArticle.setAttribute('class', 'innerArticle');
 			innerArticle.setAttribute('tabindex', '1');
-			podCastContainer.appendChild(innerArticle);
+			podCastContainer?.appendChild(innerArticle);
 			return innerArticle;
 		}
 

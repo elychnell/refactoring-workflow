@@ -6,7 +6,7 @@ G
 - [x] Få projektet att funka
 - [x] CSS till Sass
 - [x] Enhetlig namngivning i CSS:en
-- [ ] Konvertera till TypeScript
+- [x] Konvertera till TypeScript
 - [ ] Enhetlig kodkvalitet
 - [ ] Mobilvyn
 - [ ] Språk
@@ -18,7 +18,7 @@ G
 - [ ] Eliminera onödig kod
 - [ ] Rensa bort kod som inte ska sättas
 - [ ] Infoga skärmdumpar på commit-meddelanden i README-filen
-- [ ] Infoga skärmdumpar på branches i README-filen
+- [ ] Infoga skärmdumpar på branches i README-file
 
 VG
 

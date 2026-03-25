@@ -8,7 +8,7 @@ G
 - [x] Enhetlig namngivning i CSS:en
 - [x] Konvertera till TypeScript
 - [x] Enhetlig kodkvalitet
-- [ ] Mobilvyn
+- [x] Mobilvyn
 - [ ] Språk
 - [ ] Rensa loggning
 - [ ] Dokumentation

@@ -10,8 +10,8 @@ G
 - [x] Enhetlig kodkvalitet
 - [x] Mobilvyn
 - [x] Språk
-- [ ] Rensa loggning
-- [ ] Dokumentation
+- [x] Rensa loggning
+- [x] Dokumentation
 - [ ] Tillgänglighet (bilder)
 - [ ] Tillgänglighet (HTML-kod)
 - [ ] Refaktorera funktioner

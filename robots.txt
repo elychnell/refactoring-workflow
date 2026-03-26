@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: 
+
+Sitemap: https://medieinstitutet.github.io/fed25d-arbetsmetodik-inl-1-elychnell/sitemap.xml

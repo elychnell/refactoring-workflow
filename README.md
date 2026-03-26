@@ -13,7 +13,7 @@ G
 - [x] Rensa loggning
 - [x] Dokumentation
 - [x] Tillgänglighet (bilder)
-- [ ] Tillgänglighet (HTML-kod)
+- [x] Tillgänglighet (HTML-kod)
 - [ ] Refaktorera funktioner
 - [ ] Eliminera onödig kod
 - [ ] Rensa bort kod som inte ska sättas

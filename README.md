@@ -2,7 +2,6 @@
 
 G
 
-- [x] En färdig uppgift markeras med ett x. Du kan radera denna exempelrad.
 - [x] Få projektet att funka
 - [x] CSS till Sass
 - [x] Enhetlig namngivning i CSS:en

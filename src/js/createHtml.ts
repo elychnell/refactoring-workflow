@@ -1,7 +1,5 @@
 import { getPodcasts } from './api'
 
-const podCastContainer = document.querySelector('.podlistPods')
-
 let i = 0
 
 /**
@@ -12,7 +10,6 @@ let i = 0
 export async function createHtml() {
     const podCasts = await getPodcasts()
     podCasts.programs.forEach(() => {
-
         const innerArticle = createInnerArticle()
         createImg()
         const textDiv = createTextDiv()
@@ -26,8 +23,8 @@ export async function createHtml() {
          * @description Creates an article element with the class 'innerArticle' and appends it to the podcast container.
          * @returns {HTMLElement} The created article element.
          */
-
         function createInnerArticle() {
+            const podCastContainer = document.querySelector('.podlistPods')
             const innerArticle = document.createElement('article')
             innerArticle.setAttribute('class', 'innerArticle')
             podCastContainer?.appendChild(innerArticle)
@@ -110,5 +107,3 @@ export async function createHtml() {
         }
     })
 }
-
-export default createHtml

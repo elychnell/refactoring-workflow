@@ -12,7 +12,7 @@ G
 - [x] Språk
 - [x] Rensa loggning
 - [x] Dokumentation
-- [ ] Tillgänglighet (bilder)
+- [x] Tillgänglighet (bilder)
 - [ ] Tillgänglighet (HTML-kod)
 - [ ] Refaktorera funktioner
 - [ ] Eliminera onödig kod

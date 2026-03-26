@@ -31,7 +31,7 @@ export async function createHtml() {
         function createInnerArticle() {
             const innerArticle = document.createElement('article')
             innerArticle.setAttribute('class', 'innerArticle')
-            innerArticle.setAttribute('tabindex', '1')
+            //innerArticle.setAttribute('tabindex', '1')
             podCastContainer?.appendChild(innerArticle)
             return innerArticle
         }
@@ -58,7 +58,9 @@ export async function createHtml() {
             const linkPlacement = document.createElement('a')
             const linkText = document.createTextNode('Lyssna här')
             linkPlacement.setAttribute('href', podCasts.programs[i].programurl)
-            linkPlacement.setAttribute('tabindex', '1')
+            linkPlacement.setAttribute('target', '_blank')
+            linkPlacement.setAttribute('alt', 'Länk till ' + podCasts.programs[i].name)
+            //linkPlacement.setAttribute('tabindex', '1')
             linkPlacement.appendChild(linkText)
             textDiv.appendChild(linkPlacement)
         }

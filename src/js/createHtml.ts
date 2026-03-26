@@ -73,6 +73,7 @@ export async function createHtml() {
             imgPlacement.setAttribute('src', podCasts.programs[i].socialimage)
             imgPlacement.setAttribute('width', '100')
             imgPlacement.setAttribute('height', '100')
+            imgPlacement.setAttribute('alt', 'Bild: ' + podCasts.programs[i].name)
             innerArticle.appendChild(imgPlacement)
         }
 

@@ -15,5 +15,3 @@ export async function getPodcasts() {
             return null
         })
 }
-
-export default getPodcasts

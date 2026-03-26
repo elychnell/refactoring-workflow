@@ -11,13 +11,11 @@ let i = 0
 
 export async function createHtml() {
     const podCasts = await getPodcasts()
-    podCasts.programs.forEach((podcast: any) => {
+    podCasts.programs.forEach(() => {
+
         const innerArticle = createInnerArticle()
-
         createImg()
-
         const textDiv = createTextDiv()
-
         createHeader()
         createP()
         createLink()
@@ -28,10 +26,10 @@ export async function createHtml() {
          * @description Creates an article element with the class 'innerArticle' and appends it to the podcast container.
          * @returns {HTMLElement} The created article element.
          */
+
         function createInnerArticle() {
             const innerArticle = document.createElement('article')
             innerArticle.setAttribute('class', 'innerArticle')
-            //innerArticle.setAttribute('tabindex', '1')
             podCastContainer?.appendChild(innerArticle)
             return innerArticle
         }
@@ -63,7 +61,6 @@ export async function createHtml() {
                 'alt',
                 'Länk till ' + podCasts.programs[i].name
             )
-            //linkPlacement.setAttribute('tabindex', '1')
             linkPlacement.appendChild(linkText)
             textDiv.appendChild(linkPlacement)
         }

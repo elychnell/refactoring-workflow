@@ -1,7 +1,7 @@
 import js from '@eslint/js'
 import globals from 'globals'
 import tseslint from 'typescript-eslint'
-import { defineConfig } from 'eslint/config'
+import { defineConfig, globalIgnores } from 'eslint/config'
 
 export default defineConfig([
     {
@@ -19,4 +19,5 @@ export default defineConfig([
         },
     },
     tseslint.configs.recommended,
+    globalIgnores(["dist/*"]),
 ])

@@ -1,3 +1,6 @@
+# old lock file
+pnpm-lock.yaml
+
 # Logs
 logs
 *.log

@@ -1,4 +1,3 @@
-
 /**
  * @function getPodcasts
  * @description Fetches podcast data from the SR API.

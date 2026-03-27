@@ -14,8 +14,8 @@ G
 - [x] Tillgänglighet (bilder)
 - [x] Tillgänglighet (HTML-kod)
 - [x] Refaktorera funktioner
-- [ ] Eliminera onödig kod
-- [ ] Rensa bort kod som inte ska sättas
+- [x] Eliminera onödig kod
+- [x] Rensa bort kod som inte ska sättas
 - [ ] Infoga skärmdumpar på commit-meddelanden i README-filen
 - [ ] Infoga skärmdumpar på branches i README-file
 

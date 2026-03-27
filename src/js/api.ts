@@ -1,5 +1,5 @@
 
-const API_ADDRESS = import.meta.env.VITE_API_ADRESS
+const API_ADDRESS:string = import.meta.env.VITE_API_ADRESS
  
 /**
  * @function getPodcasts

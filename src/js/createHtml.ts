@@ -21,7 +21,7 @@ function createInnerArticle() {
  * @description Creates an image element with the podcast's social image URL and appends it to the inner article element.
  */
 
-function createImg(podCast:Array<string>, innerArticle: HTMLElement) {
+function createImg(podCast:{ socialimage: string; name: string }, innerArticle: HTMLElement) {
     const imgPlacement = document.createElement('IMG')
     imgPlacement.setAttribute('src', podCast.socialimage)
     imgPlacement.setAttribute('width', '100')
@@ -51,7 +51,7 @@ function createTextDiv(innerArticle: HTMLElement) {
  * @description Creates an anchor element with the podcast URL and appends it to the text div element.
  */
 
-function createLink(podCast:string[], textDiv: HTMLElement) {
+function createLink(podCast:{ programurl: string; name: string }, textDiv: HTMLElement) {
     const linkPlacement = document.createElement('a')
     const linkText = document.createTextNode('Lyssna här')
     linkPlacement.setAttribute('href', podCast.programurl)
@@ -67,7 +67,7 @@ function createLink(podCast:string[], textDiv: HTMLElement) {
  * @param {HTMLElement} textDiv - The div element to which the paragraph will be appended.
  * @description Creates a paragraph element with the podcast's description and appends it to the text div element.
  */
-function createP(podCast:string[], textDiv: HTMLElement) {
+function createP(podCast:{ description: string }, textDiv: HTMLElement) {
     const descPlacement = document.createElement('p')
     const desc = document.createTextNode(podCast.description)
     descPlacement.appendChild(desc)
@@ -81,7 +81,7 @@ function createP(podCast:string[], textDiv: HTMLElement) {
  * @description Creates a header element with the podcast's name and appends it to the text div element.
  */
 
-function createHeader(podCast:string[], textDiv: HTMLElement) {
+function createHeader(podCast:{ name: string }, textDiv: HTMLElement) {
     const headerPlacement = document.createElement('h2')
     const programName = document.createTextNode(podCast.name)
     headerPlacement.appendChild(programName)
@@ -95,7 +95,7 @@ function createHeader(podCast:string[], textDiv: HTMLElement) {
 
 export async function createHtml() {
     const podCastList = await getPodcasts()
-    podCastList.programs.forEach((podCast: string[]) => {
+    podCastList.programs.forEach((podCast:{ socialimage: string; name: string; programurl: string; description: string }) => {
         const innerArticle = createInnerArticle()
         createImg(podCast, innerArticle)
         const textDiv = createTextDiv(innerArticle)

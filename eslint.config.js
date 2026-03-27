@@ -11,5 +11,5 @@ export default defineConfig([
         languageOptions: { globals: globals.browser },
     },
     globalIgnores(['dist/*']),
-    tseslint.configs.recommended,
+    tseslint.configs.strict,
 ])

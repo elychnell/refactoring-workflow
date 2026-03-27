@@ -17,7 +17,7 @@ G
 - [x] Eliminera onödig kod
 - [x] Rensa bort kod som inte ska sättas
 - [x] Infoga skärmdumpar på commit-meddelanden i README-filen
-- [ ] Infoga skärmdumpar på branches i README-file
+- [x] Infoga skärmdumpar på branches i README-file
 
 ## Commit messages:
 
@@ -37,6 +37,12 @@ G
 ![Commits14](./documentation/img/Commits14.jpg)
 ![Commits15](./documentation/img/Commits15.jpg)
 ![Commits16](./documentation/img/Commits16.jpg)
+
+## Branches:
+
+![Branches](./documentation/img/Branches.jpg)
+![BranchesTree1](./documentation/img/BranchesTree1.jpg)
+![BranchesTree2](./documentation/img/BranchesTree2.jpg)
 
 VG
 

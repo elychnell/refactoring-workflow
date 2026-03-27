@@ -6,11 +6,20 @@
     "scripts": {
         "dev": "vite",
         "build": "vite build",
-        "preview": "vite preview"
+        "preview": "vite preview",
+        "format": "npx prettier --write ."
     },
     "devDependencies": {
+        "@eslint/js": "^10.0.1",
+        "@tsconfig/strictest": "^2.0.8",
+        "@types/node": "^25.5.0",
+        "eslint": "^10.1.0",
+        "globals": "^17.4.0",
+        "jiti": "^2.6.1",
         "prettier": "3.8.1",
+        "prettier-eslint": "^16.4.2",
         "sass-embedded": "^1.98.0",
+        "typescript-eslint": "^8.57.2",
         "vite": "^6.4.1"
     },
     "dependencies": {

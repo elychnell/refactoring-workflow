@@ -1,4 +1,6 @@
 
+const API_ADDRESS:string = import.meta.env.VITE_API_ADRESS
+ 
 /**
  * @function getPodcasts
  * @description Fetches podcast data from the SR API.
@@ -6,9 +8,7 @@
  */
 
 export async function getPodcasts() {
-    return await fetch(
-        'https://api.sr.se/api/v2/programs/index?programcategoryid=133&format=json&pagination=false&indent=true&filter=program.archived&filterValue=false'
-    )
+    return await fetch(API_ADDRESS)
         .then((data) => data.json())
         .then((json) => json)
         .catch((error) => {
@@ -16,5 +16,3 @@ export async function getPodcasts() {
             return null
         })
 }
-
-export default getPodcasts

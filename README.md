@@ -2,7 +2,6 @@
 
 G
 
-- [x] En färdig uppgift markeras med ett x. Du kan radera denna exempelrad.
 - [x] Få projektet att funka
 - [x] CSS till Sass
 - [x] Enhetlig namngivning i CSS:en
@@ -14,9 +13,9 @@ G
 - [x] Dokumentation
 - [x] Tillgänglighet (bilder)
 - [x] Tillgänglighet (HTML-kod)
-- [ ] Refaktorera funktioner
-- [ ] Eliminera onödig kod
-- [ ] Rensa bort kod som inte ska sättas
+- [x] Refaktorera funktioner
+- [x] Eliminera onödig kod
+- [x] Rensa bort kod som inte ska sättas
 - [ ] Infoga skärmdumpar på commit-meddelanden i README-filen
 - [ ] Infoga skärmdumpar på branches i README-file
 

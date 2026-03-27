@@ -16,8 +16,12 @@ G
 - [x] Refaktorera funktioner
 - [x] Eliminera onödig kod
 - [x] Rensa bort kod som inte ska sättas
-- [ ] Infoga skärmdumpar på commit-meddelanden i README-filen
+- [x] Infoga skärmdumpar på commit-meddelanden i README-filen
 - [ ] Infoga skärmdumpar på branches i README-file
+
+## Commit messages:
+
+![alt text](./documentation/img/Commit1.jpg)
 
 VG
 

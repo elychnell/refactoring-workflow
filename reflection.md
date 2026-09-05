@@ -1,5 +1,3 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/ndnTQ3NH)
-
 # Inlämningsuppgift 2 i Arbetsmetodik, 10 YHP
 
 Reflektioner kring kodkvalitet och hållbarhet.
@@ -193,17 +191,15 @@ window.setTimeout(() => {
 }, 1200);
 ```
 
-Jag tror att problemet mest var att koden ifråga var skriven med hjälp av AI vilket ledde till att inte ens den personen som
-introducerade koden var helt klar över hur den fungerade eller snarare varför det inte riktigt fungerade som det var tänkt alla gånger.
+Jag tror att det största problemet var att koden hade utvecklats med hjälp av AI utan att alla inblandade hade en fullständig förståelse för hur den fungerade.
 
-När koden introducerades i projektet så var den inte så väl kommenterad som den är nu,
-Vilket gjorde koden svårläst. Men med kommentarerna och diskussion inom gruppen så blev
-det klarare vad koden gjorde och vad vi alla behövde göra i våra individuella rum.
+Transitionssystemet var inte nödvändigtvis dåligt skrivet, men det var svårt att förstå och felsöka. Det blev särskilt tydligt när systemet inte fungerade som förväntat och vi behövde anpassa det för de olika rummen.
 
-Det känns som att koden i sig är kanske inte superkomplex eller skriven på fel sätt men det är ett bra exempel på hur användningen av AI kan orsaka problem.
-Inte för att koden nödvändigtvis var dålig men för att förståelsen kring koden var det och att det då blir ett hinder när koden sen måste felsökas eller adapteras.
+När koden först introducerades i projektet var den dessutom mindre utförligt kommenterad än den är nu. Genom diskussioner i gruppen och genom att lägga till kommentarer som förklarade syftet med de olika funktionerna fick vi en mycket bättre förståelse för hur systemet fungerade och vad varje rum behövde göra.
 
-En läxa gällande AI som iallafall jag kommer att ta med mig i min karriär.
+Detta blev en viktig lärdom för mig när det gäller AI-assisterad utveckling. Problemet är inte nödvändigtvis att AI-genererad kod är dålig, utan att det kan bli problematiskt att använda kod utan att fullt ut förstå den när den senare behöver felsökas, ändras eller byggas ut.
+
+Detta är något jag kommer att ta med mig in i mitt framtida yrkesliv: oavsett hur koden har skapats behöver jag förstå den kod som jag ansvarar för.
 
 ## Fråga 2 - Refaktorering i praktiken
 
@@ -213,11 +209,11 @@ Hur såg koden ut före respektive efter, och på vilket sätt blev den mer lät
 
 ## Svar Fråga 2:
 
-Nu blir det nog lite svårt att visa exakt hur koden såg innan ut eftersom den nu är ändrad.
+Det är svårt att visa exakt hur den ursprungliga koden såg ut eftersom den sedan dess har refaktorerats.
 Men koden i inlämningsuppgift 1 i createHtml filen var skriven så att alla funktioner vad skrivna inom själva createHtml funktionen.
 
-Det är ju inte fel syntax att göra så men det gör koden något svårläst speciellt i en typescript context.
-Sedan fanns det även en iterations variabel (i) som egentligen inte behövdes eftersom koden använde .forEach:
+Det var inget fel i syntaxen, men det gjorde filen svårare att läsa och förstå, särskilt eftersom antalet funktioner växte.
+Iterationsvariabeln var också onödig eftersom koden använde .forEach(). Eftersom samma operationer skulle utföras på varje podcast behövde vi inte hålla reda på vilken iteration vi befann oss på.
 
 ```typescript
 const podCastList = await getPodcasts()
@@ -365,15 +361,18 @@ Motivera varför det är viktigt för ett team av Front End-utvecklare att strä
 
 ## Svar Fråga 3:
 
-För att det ska bli lättare att underhålla koden. Det vill säga felsöka och adaptera den till ett förändrat use case.
-Och för att man lättare ska kunna förstå varandras kod om flera jobbar inom samma projekt.
+Det främsta skälet är underhållbarhet.
 
-Mer (komplex) kod är också alltid en större belastning. Både vad det gäller hårdvaru resurser men också till exempel när det gäller överföring av filer etc.
-Det märks inte mycket till en början med dagens hårdvara och internet hastigheter men ju större projekt desto större påverkan får det om man slarvar.
+Kod som är lätt att förstå gör det enklare för teamet att felsöka problem, göra förändringar och anpassa applikationen när kraven förändras.
+Det gör också att det blir lättare att sätta sig in i kod som någon annan har skrivit.
 
-Kan man uppnå samma resultat med färre rader kod så är det alltid att föredra.
-Det är därför man kan säga att man skjuter man sig själv i foten om man gör en "Elon"
-och avskedar alla programmerare som inte producerat "tillräckligt" många rader kod.
+Förenklad kod behöver inte nödvändigtvis betyda färre rader kod. En kortare lösning kan ibland vara svårare att förstå än en något
+längre men välstrukturerad lösning. Målet bör istället vara att minska onödig komplexitet och samtidigt behålla en tydlig och lättläst struktur.
+
+Det är därför jag tycker att det kan bli kontraproduktivt att fokusera för mycket på mängden kod som produceras.
+Att skriva mer kod betyder inte automatiskt att man skapar mer värde. Det viktiga är att koden löser problemet på ett tydligt och underhållbart sätt.
+
+Som ett något överdrivet exempel kan man därför säga att man skjuter sig själv i foten om man främst mäter en utvecklares produktivitet efter hur många rader kod personen producerar.
 
 ## Fråga 4 - DRY (Don't Repeat Yourself)
 
@@ -381,14 +380,16 @@ Hittade ni logik i grupparbetsprojektet som upprepades på flera ställen? Om ja
 
 ## Svar Fråga 4:
 
-Ja trots att vi i alla fall hade ambitioner att planera sådana saker i förväg så blev det säkert lite repetering på ett par ställen.
-Jag kommer inte på något exempel från mitt rum och jag har inte full insikt i de andras rum.
+Ja. Trots att vi försökte planera för återanvändbar logik redan under planeringsfasen uppstod viss duplicering under utvecklingen.
+Jag kommer inte på något bra exempel från mitt eget rum, och jag har inte full insyn i hur de andra rummen var uppbyggda.
 
-Men vi hade bland annat en bugg i fusk motorn som gjorde att rummen inte avslutades korrekt.
-Eller snarare keybinds och ljudfiler blev aldrig bortstädade något som visade sig i demon vi hade också.
+Vi hade däremot bland annat en bugg i fusk-motorn som gjorde att rummen inte avslutades korrekt. Mer specifikt blev keybinds och ljudfiler aldrig ordentligt bortstädade,
+vilket vi även upptäckte under demon. Jag tog på mig att lösa buggen. En enkel lösning hade varit att kopiera cleanup-koden från de olika rummen och köra den igen i fusk-motorn.
 
-Jag tog på mig uppgiften att lösa den buggen och det hade varit en "enkel" lösning att bara kopiera koden från dom olika rum filerna och köra den igen i fusk motor filen.
-Men jag tänkte faktiskt på DRY då och insåg att alla rummen hade redan en specifik funktion för detta så jag valde att exportera dom och importera dom i fusk motorn istället.
+Jag tänkte däremot på DRY och insåg att de olika rummen redan hade specifika funktioner för detta.
+Jag valde därför att exportera de befintliga funktionerna och importera dem i fusk-motorn istället för att duplicera logiken.
+
+På så sätt kunde vi återanvända befintlig kod och samtidigt undvika att behöva underhålla samma logik på flera ställen.
 
 ## Fråga 5 - Namngivningens betydelse
 
@@ -396,9 +397,9 @@ Reflektera över hur ni namngav variabler, funktioner och komponenter i projekte
 
 ## Svar Fråga 5:
 
-Vi bestämde oss tidigt under planeringen för att vi kommer att använda camelCase och att vi ska försöka namnge alla våra funktioner på ett sätt som gör koden "självkommenterande"
-Och det följde vi alla sedan under projektets gång. Det är möjligt att någon av dom andra ändrat ett namn någonstans men jag var aldrig inblandad i någon namnändring eftersom vi alla
-följde dom rekommendationer som vi kommit överens om under planerings stadiet av projektet.
+Vi bestämde oss tidigt under planeringsfasen för att använda camelCase och att försöka namnge variabler och funktioner på ett sätt som tydligt beskrev deras syfte.
+Jag har inget bra exempel på ett specifikt namn som jag själv ändrade under projektets gång. Det beror främst på att vi etablerade våra naming conventions tidigt och sedan
+i stort sett följde dem genom hela projektet. Det är möjligt att det gjordes enskilda namnändringar på andra ställen i projektet, men jag var inte direkt involverad i någon sådan ändring.
 
 ## Fråga 6 - När är det dags att refaktorera?
 
@@ -406,11 +407,14 @@ Hur avgjorde ni i gruppen när det var läge att förbättra befintlig kod kontr
 
 ## Svar Fråga 6:
 
-Vi byggde ny funktionalitet och löste buggar ändra fram till deadline så vi han aldrig påbörja något större refaktorerings projekt för hela projektet.
-Jag gjorde dock ändringar där jag kunde se att det såg tokigt ut under projektets gång. Men om vi hade haft mer tid så hade det varit en bra ide att
-starta ett refaktorerings projekt när projektets funktionalitet var på plats men vi hade tid kvar till deadline.
+Under projektet var vår huvudsakliga prioritet att implementera den funktionalitet som krävdes och lösa buggar innan deadline.
+Vi hann därför aldrig påbörja något större refaktoreringsarbete för hela projektet.
 
-Alternativt skulle man kunna inleda jobbet med en nästa version med att refaktorera koden.
+Jag gjorde däremot mindre förändringar under projektets gång när jag stötte på kod som jag tyckte kunde förenklas eller struktureras bättre.
+Om vi hade haft mer tid tror jag att en dedikerad refaktoreringsfas efter att den huvudsakliga funktionaliteten var på plats hade varit värdefull.
+Ett annat alternativ hade varit att planera in refaktorering som en del av arbetet inför nästa version av projektet.
+
+Projektet lärde mig att refaktorering bör ses som en del av utvecklingsprocessen och inte bara som något man gör om det råkar finnas tid över i slutet.
 
 ## Fråga 7 - Kodgranskning (Code Review) som verktyg
 
@@ -418,8 +422,11 @@ På vilket sätt bidrog era gemensamma genomgångar av koden till att identifier
 
 ## Svar Fråga 7:
 
-Ett par extra ögon på koden är alltid bra och vi hade flera tillfällen där vi diskuterade eller felsökte koden tillsammans
-vilket ofta ledde till att vi kom på saker som behövde åtgärdas. Både i möten med hela gruppen men även i mindre grupper.
+Att få ett par extra ögon på koden är alltid värdefullt. Vi hade flera tillfällen där vi diskuterade eller felsökte kod tillsammans,
+både under möten med hela gruppen och i mindre grupper. Det ledde ofta till att vi upptäckte saker som hade varit svårare att se när man arbetade ensam.
+Genom att diskutera hur olika delar av koden fungerade kunde vi även upptäcka antaganden eller möjliga problem som inte hade varit uppenbara för den som skrev koden från början.
+
+Kodgranskning blev därför inte bara ett sätt att hitta direkta fel, utan även ett sätt att få flera perspektiv på hur koden kunde förstås och förbättras.
 
 ## Fråga 8 - Dokumentation genom kod
 
@@ -427,14 +434,17 @@ Clean Code handlar ofta om att koden ska vara "självdokumenterande". Anser du a
 
 ## Svar Fråga 8:
 
-Ja eftersom vi satte oss ned och bestämde mycket i planerings stadiet som. Naming conventions,Hur vi skulle utforma kommentarer,
-Att vi alla skulle använda Biome med samma config etc gjorde att koden blev ganska enhetlig och lättläst från start.
+Ja, överlag tycker jag att den slutgiltiga kodbasen är relativt lätt för en annan utvecklare att sätta sig in i.
 
-Med det sagt så tror jag de svaga länkarna blev introducerade när AI användes på ett för ingripande sätt.
-Den koden blev visserligen lite mer städad när det tillkom kommentarer som klargjorde lite vad som var vad.
+Vi bestämde flera saker redan under planeringsfasen, bland annat naming conventions, hur vi skulle utforma kommentarer
+och att alla skulle använda Biome med samma konfiguration. Det gjorde att koden blev mer enhetlig genom hela projektet.
 
-Jag tycker att vi lyckades att hålla oss till det som vi bestämde i början och att det gjort koden ganska lättläst.
-Jag skulle dock kommenterat med JSDoc istället för att göra koden ännu lite mer lättläst om jag hade fått gå tillbaka och göra om.
+Jag tycker däremot att vissa av de svagare delarna av kodbasen introducerades när AI användes på ett för ingripande sätt.
+Den koden blev visserligen tydligare efter att vi lagt till kommentarer och diskuterat hur den fungerade inom gruppen.
+
+Jag tycker att vi lyckades hålla oss till de riktlinjer vi bestämde i början, vilket gjorde kodbasen relativt enhetlig och lättläst.
+
+Om jag fick göra om projektet skulle jag däremot använda JSDoc mer konsekvent för funktioner där parametrarna eller funktionens syfte inte är uppenbara. Det hade gjort koden lättare att förstå utan att den ursprungliga utvecklaren behövde vara tillgänglig för att förklara den.
 
 ## Fråga 9 - Lärdomar inför framtiden
 
@@ -442,9 +452,12 @@ Baserat på arbetet med gruppuppgiften, vilket är det främsta rådet du skulle
 
 ## Svar Fråga 9:
 
-Att planera tillsammans är en jätteviktigt grundpelare för alla projekt, Och det blir bara viktigare ju större projektet är.
-Att ta sig lite tid och tänka över en funktion från ett kodstruktur och refaktorerings perspektiv så snart som den är "färdig"
-Att lämna plats i planeringen för ett bredare refaktorerings projekt både mitt i och före deadline om möjligt.
+Min främsta lärdom är att gemensam planering är en viktig grund för alla projekt, och att detta blir ännu viktigare ju större projektet är.
+
+Jag skulle också försöka göra refaktorering till en del av själva utvecklingsprocessen istället för att se det som något man bara gör om det finns tid över.
+Att ta sig tid att fundera över strukturen i en funktion när den är färdig kan göra det lättare att undvika att teknisk skuld byggs upp.
+
+Om planeringen tillåter det skulle jag även reservera tid under projektet för en bredare genomgång och refaktorering innan den slutliga deadlinen.
 
 ## Fråga 10 - Arkitektur och state-hantering
 
@@ -461,10 +474,11 @@ I föregående kurs byggde ni ett system där flera rum hänger ihop och där et
 - Beskriv exakt hur ditt rum meddelar det övergripande systemet att spelaren har löst pusslet och att nästa rum ska låsas upp.
   Sker det via en global variabel, ett "Custom Event", en callback-funktion eller genom att manipulera URL:en/Local Storage? Motivera varför ni valde just den metoden.
 
-Vi valde att använda local storage för att förmedla game state.
-Jag misstänker att vi dels gjorde det eftersom vi alla hade jobbat med det tidigare.
+Vi valde att använda Local Storage för att förmedla game state.
 
-Och eftersom vi inte behövde spara på mer än en maskin så bedömdes det som tillräckligt.
+En anledning var att vi redan hade erfarenhet av att arbeta med Local Storage.
+Eftersom spelet bara behövde spara sitt state lokalt på spelarens maskin bedömde vi också att det var tillräckligt för projektets omfattning.
+
 Detta gjordes via typen och funktionerna här:
 
 ```typescript
@@ -511,9 +525,7 @@ setRoomResult('earth', {
 - Om jag skulle vilja ändra ordningen på rummen (t.ex. att ditt rum kommer först istället för som nummer tre),
   vilka specifika rader eller funktioner i din kod skulle du behöva ändra för att det inte ska uppstå logiska fel?
 
-I filen: src\rooms\welcome\welcomePage.ts
-
-På rad 76:
+Om jag skulle vilja ändra ordningen på rummen skulle den första förändringen behöva göras i: src/rooms/welcome/welcomePage.ts, där handleStartGame() avgör vilket rum som startas först.
 
 ```typescript
 // When a new game is started, the timer should start and the first room should be built and shown
@@ -524,7 +536,7 @@ function handleStartGame(): void {
 }
 ```
 
-Så behöver funktionen room1woodFunc behöver bytas ut mot room3earthFunc
+Om exempelvis Earth Room skulle flyttas till första plats skulle room1woodFunc() behöva ersättas med room3earthFunc().
 Så här:
 
 ```typescript
@@ -536,10 +548,8 @@ function handleStartGame(): void {
 }
 ```
 
-Och om vi säger att wood room ska vara det andra rummet
-så behöver man även andra i filen: src\rooms\3earth\room3earth.ts
-
-På rad 464:
+Jag skulle även behöva ändra de goToNextRoom()-anrop som styr övergången mellan rummen så att resten av ordningen blir konsekvent.
+I exemplet skulle anropet i Earth Room behöva ändras från room4metalFunc till room1woodFunc om Wood Room skulle vara nästa rum.
 
 Ändra:
 
@@ -558,8 +568,11 @@ för att försäkra att alla rummen kommer i rätt ordning.
 
 - Om en spelare "fuskar" genom att skriva in rätt kod i en input-ruta, men hoppar över ett tidigare steg i ditt rum (t.ex. att de inte har hittat den dolda ledtråden först) – hur säkerställer din kod att pusslet faktiskt är löst i rätt ordning internt i ditt rum? Beskriv hur du hanterar detta "tillstånd" (state) utan att förlita dig på att bara dölja/visa HTML-element med CSS.
 
-Jag hade inte någon dold ledtråd i mitt rum kan det vara så att denna fråga var ämnad för ett annat rum?
-Men internt i mitt rum kontrolleras spelets state i checkSlateLock funktionen:
+Mitt rum använde inte någon dold ledtråd eller separat inputsekvens, så just det exemplet gäller inte direkt för mitt pussel.
+
+Internt i mitt rum hanteras istället spelets state genom arrayen correctSlatesArr.
+
+Funktionen checkSlateLock() kontrollerar vilken siffra varje platta ska ha baserat på dess aktuella koordinat. 
 
 ```typescript
 function checkSlateLock(movedSlate: HTMLElement | null): void {
@@ -620,10 +633,8 @@ function checkSlateLock(movedSlate: HTMLElement | null): void {
 } // checkSlateLock END
 ```
 
-Där matchas alla (nya) kordinater med de korrekta placeringarna
-
-Som sedan lägger in de plattorna som sitter
-på rätt plats correctSlatesArr i via funktionen checkTextContent:
+Om en platta ligger på rätt plats läggs dess korrekta värde till i correctSlatesArr.
+Om en platta som tidigare låg rätt flyttas från sin korrekta plats tas den istället bort från arrayen.
 
 ```typescript
 function checkTextContent(textContent: string, target: number): void {
@@ -642,14 +653,19 @@ function checkTextContent(textContent: string, target: number): void {
 	}
 } // checkTextContent END
 ```
+Pusslet är löst när alla 15 plattor ligger på rätt plats:
 
-Och även tar bort dom som inte längre sitter på rätt plats
-Spelet är sedan vunnet när alla 15 sitter på rätt plats.
+```typescript
+if (correctSlatesArr.length === 15) {
+    winner();
+}
+```
 
-Denna funktion körs varje gång en platta flyttas.
-Så det borde inte gå att "hoppa över ett drag" eller hamna i fel state i mitt rum.
 
-Sedan är även vår fuskmotor utformad så att man enbart
-kan fuska sig igenom ett helt rum i taget samt att det
-alltid måste vara en "Win" eller en "loss" så den borde
-också vara ett skydd mot denna typ av problem.
+Den här kontrollen körs varje gång en platta flyttas.
+Spelet förlitar sig därför inte enbart på att visa eller
+dölja HTML-element med CSS för att avgöra om pusslet är löst,
+utan det faktiska pussel-state hanteras i JavaScript.
+
+Vår fuskmotor är dessutom utformad så att man bara kan fuska sig igenom ett helt rum i taget.
+Det måste fortfarande resultera i antingen en win eller en loss innan spelet går vidare till nästa rum.
